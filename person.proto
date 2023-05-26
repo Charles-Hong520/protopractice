@@ -1,0 +1,19 @@
+syntax = "proto3";
+/* 
+protoc --cpp_out=. person.proto 
+*/
+message Address {
+  string street = 1;
+  string city = 2;
+  string state = 3;
+  int32 zipcode = 4;
+  string history = 5;
+}
+message Person {
+  string name = 1;
+  int32 age = 2;
+  string phone_numbers = 3;
+  string hobby = 4;
+  repeated Address addr = 5;
+}
+
