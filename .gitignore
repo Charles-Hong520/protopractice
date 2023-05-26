@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+person
+gen
+tp
+*.bin
