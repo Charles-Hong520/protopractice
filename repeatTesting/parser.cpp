@@ -38,39 +38,30 @@ bool Parser::consume() {
     uint32_t wire = tag & 7;
     // handle a record
     switch (field_id) {
-        case 1: //name
-            if(wire==2) { 
+        case 2: //age
+            if(wire==2) {
                 uint32_t len;
                 input->ReadVarint32(&len);
-                std::string buffer;
-                input->ReadString(&buffer, len);
-                person.set_name(buffer);
-            } 
-        break;
-        case 2: //age
-            if(wire==0) {
+                std::cout<<len<<std::endl;
+
+
+                //can be parallelized
+                uint32_t end = len + input->CurrentPosition();
                 uint32_t i;
-                input->ReadVarint32(&i);
-                person.set_age(i);
+                while(input->CurrentPosition() < end) {
+                    input->ReadVarint32(&i);
+                    person.add_age(i);
+                }
             }
         break; 
-        case 3: //phone number
-            if(wire==2) {
-                //repeat email
-                uint32_t len;
-                input->ReadVarint32(&len);
-                std::string buffer;
-                input->ReadString(&buffer, len);
-                person.set_phone_numbers(buffer);
-            }
-        break;
         case 4: //hobby
             if(wire==2) {
                 uint32_t len;
                 input->ReadVarint32(&len);
+                std::cout<<len<<std::endl;
                 std::string buffer;
                 input->ReadString(&buffer, len);
-                person.set_hobby(buffer);
+                person.add_hobby(buffer);
             }
         break;
         case 5: //message addr
@@ -84,7 +75,6 @@ bool Parser::consume() {
                 
                 //thread pool
 
-
                 // trds[i]=std::thread(&Parser::give_to_worker, this, currPos, len, addr);
                 // pool.push_task(&Parser::give_to_worker, this, currPos, len, addr);
 
@@ -96,10 +86,6 @@ bool Parser::consume() {
             }
         break;
     }
-    return true;
-}
-
-bool Parser::consumeAddress() {
     return true;
 }
 
@@ -119,22 +105,21 @@ void Parser::give_to_worker(uint32_t currPos, uint32_t len, Address* addr) {
 double Parser::print_difference(const Person& correct_person) {
     std::chrono::time_point<std::chrono::system_clock>  start = std::chrono::system_clock::now();
     while(consume()) {}
-    pool.wait_for_tasks();
     
     std::chrono::time_point<std::chrono::system_clock>  end = std::chrono::system_clock::now();
     std::chrono::duration<double>  elapsed_seconds = end - start;
     // cout<<"custom time total: "<<elapsed_seconds.count()<<"s"<<endl;
-    
-    if(!gp::util::MessageDifferencer::Equals(person, correct_person)) {
+    std::cout<<(gp::util::MessageDifferencer::Equals(person, correct_person) ? "YES":"NO")<<std::endl;
+    if(!gp::util::MessageDifferencer::Equals(person, correct_person) || 1) {
         if (std::string s; gp::TextFormat::PrintToString(person, &s)) {
-            std::cout << "Your message: " << s;
+            std::cout << "Your message: " << std::endl << s;
         } else {
             std::cerr << "Message not valid (partial content: "
             << person.ShortDebugString() << ")\n";
         }
         cout<<endl;
         if (std::string s; gp::TextFormat::PrintToString(correct_person, &s)) {
-            std::cout << "correct message: " << s;
+            std::cout << "correct message: " << std::endl << s;
         } else {
             std::cerr << "Message not valid (partial content: "
             << correct_person.ShortDebugString() << ")\n";

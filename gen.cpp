@@ -1,5 +1,5 @@
 /*
-g++ -std=c++17 threadpractice.cpp parser.cpp person.pb.cc -lprotobuf -lpthread -o tp && ./tp
+g++ -std=c++17 gen.cpp parser.cpp person.pb.cc -lprotobuf -lpthread -o tp && ./tp
 */
 #include "parser.h"
 #include "gen.h"
@@ -19,12 +19,11 @@ int main() {
             long long lim = (long long) p * (long long) hist;
             if(lim < 2e9) {
                 // cout<<lim<<endl;
-                std::string name = std::to_string(p) + "_" + std::to_string(hist) + ".bin";
-                std::string filename = name;
+                std::string filename = "bin/"+std::to_string(p) + "_" + std::to_string(hist) + ".bin";
                 if(!std::filesystem::exists(filename)) {
-                    // cout<<p<<" "<<hist<<"making"<<endl;
-                    make_file(p,hist);
-                    // cout<<p<<" "<<hist<<"finish"<<endl;
+                    cout<<p<<" "<<hist<<"making"<<endl;
+                    make_file(filename,p,hist);
+                    cout<<p<<" "<<hist<<"finish"<<endl;
                 }
                 double google = 0, custom = 0;
                 int itr = 2;

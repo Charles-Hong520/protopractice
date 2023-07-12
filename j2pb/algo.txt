@@ -1,0 +1,37 @@
+object contains:
+  keys : string 
+  value : string, number, object, array
+
+array contains: 
+  string, number, object, array
+
+type checking 
+identify keys values 
+identify if every elem in the array are same struct/type
+
+
+key/pair: generate "key" : {
+  type,
+    object: properties(object) (nested) 
+    array: items(object) (throw all possible keys into the array items object)
+    string, number: nothing after
+  required?
+}
+
+array: generate "items" : {
+  type can be any
+  need to do type checking to ensure elem in array are the same type.
+    if same type, generate 1 object as the value.
+    if not, we need to generate an array of obj as the value 
+}
+
+for each key/val in object
+  generate keypair accordingly.
+  if val is object type, recursively generate
+  if val is array type, see below.
+  if val is other types, only generate type.
+  
+for each val in array: 
+  check type of all vals
+  if there is only 1 type, generate object,
+  else generate an array of diff type objects.

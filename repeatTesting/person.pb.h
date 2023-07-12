@@ -425,12 +425,56 @@ class Person PROTOBUF_FINAL :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAddrFieldNumber = 5,
-    kNameFieldNumber = 1,
-    kPhoneNumbersFieldNumber = 3,
-    kHobbyFieldNumber = 4,
     kAgeFieldNumber = 2,
+    kHobbyFieldNumber = 4,
+    kAddrFieldNumber = 5,
   };
+  // repeated int32 age = 2;
+  int age_size() const;
+  private:
+  int _internal_age_size() const;
+  public:
+  void clear_age();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_age(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_age() const;
+  void _internal_add_age(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_age();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int32 age(int index) const;
+  void set_age(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_age(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      age() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_age();
+
+  // repeated string hobby = 4;
+  int hobby_size() const;
+  private:
+  int _internal_hobby_size() const;
+  public:
+  void clear_hobby();
+  const std::string& hobby(int index) const;
+  std::string* mutable_hobby(int index);
+  void set_hobby(int index, const std::string& value);
+  void set_hobby(int index, std::string&& value);
+  void set_hobby(int index, const char* value);
+  void set_hobby(int index, const char* value, size_t size);
+  std::string* add_hobby();
+  void add_hobby(const std::string& value);
+  void add_hobby(std::string&& value);
+  void add_hobby(const char* value);
+  void add_hobby(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& hobby() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_hobby();
+  private:
+  const std::string& _internal_hobby(int index) const;
+  std::string* _internal_add_hobby();
+  public:
+
   // repeated .Address addr = 5;
   int addr_size() const;
   private:
@@ -449,90 +493,6 @@ class Person PROTOBUF_FINAL :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Address >&
       addr() const;
 
-  // string name = 1;
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
-  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
-  "    string fields are deprecated and will be removed in a"
-  "    future release.")
-  std::string* unsafe_arena_release_name();
-  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
-  "    string fields are deprecated and will be removed in a"
-  "    future release.")
-  void unsafe_arena_set_allocated_name(
-      std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
-  // string phone_numbers = 3;
-  void clear_phone_numbers();
-  const std::string& phone_numbers() const;
-  void set_phone_numbers(const std::string& value);
-  void set_phone_numbers(std::string&& value);
-  void set_phone_numbers(const char* value);
-  void set_phone_numbers(const char* value, size_t size);
-  std::string* mutable_phone_numbers();
-  std::string* release_phone_numbers();
-  void set_allocated_phone_numbers(std::string* phone_numbers);
-  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
-  "    string fields are deprecated and will be removed in a"
-  "    future release.")
-  std::string* unsafe_arena_release_phone_numbers();
-  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
-  "    string fields are deprecated and will be removed in a"
-  "    future release.")
-  void unsafe_arena_set_allocated_phone_numbers(
-      std::string* phone_numbers);
-  private:
-  const std::string& _internal_phone_numbers() const;
-  void _internal_set_phone_numbers(const std::string& value);
-  std::string* _internal_mutable_phone_numbers();
-  public:
-
-  // string hobby = 4;
-  void clear_hobby();
-  const std::string& hobby() const;
-  void set_hobby(const std::string& value);
-  void set_hobby(std::string&& value);
-  void set_hobby(const char* value);
-  void set_hobby(const char* value, size_t size);
-  std::string* mutable_hobby();
-  std::string* release_hobby();
-  void set_allocated_hobby(std::string* hobby);
-  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
-  "    string fields are deprecated and will be removed in a"
-  "    future release.")
-  std::string* unsafe_arena_release_hobby();
-  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
-  "    string fields are deprecated and will be removed in a"
-  "    future release.")
-  void unsafe_arena_set_allocated_hobby(
-      std::string* hobby);
-  private:
-  const std::string& _internal_hobby() const;
-  void _internal_set_hobby(const std::string& value);
-  std::string* _internal_mutable_hobby();
-  public:
-
-  // int32 age = 2;
-  void clear_age();
-  ::PROTOBUF_NAMESPACE_ID::int32 age() const;
-  void set_age(::PROTOBUF_NAMESPACE_ID::int32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_age() const;
-  void _internal_set_age(::PROTOBUF_NAMESPACE_ID::int32 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:Person)
  private:
   class _Internal;
@@ -540,11 +500,10 @@ class Person PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > age_;
+  mutable std::atomic<int> _age_cached_byte_size_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> hobby_;
   ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::Address > addr_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr phone_numbers_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr hobby_;
-  ::PROTOBUF_NAMESPACE_ID::int32 age_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_person_2eproto;
 };
@@ -907,267 +866,125 @@ inline void Address::unsafe_arena_set_allocated_history(
 
 // Person
 
-// string name = 1;
-inline void Person::clear_name() {
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+// repeated int32 age = 2;
+inline int Person::_internal_age_size() const {
+  return age_.size();
 }
-inline const std::string& Person::name() const {
-  // @@protoc_insertion_point(field_get:Person.name)
-  return _internal_name();
+inline int Person::age_size() const {
+  return _internal_age_size();
 }
-inline void Person::set_name(const std::string& value) {
-  _internal_set_name(value);
-  // @@protoc_insertion_point(field_set:Person.name)
-}
-inline std::string* Person::mutable_name() {
-  // @@protoc_insertion_point(field_mutable:Person.name)
-  return _internal_mutable_name();
-}
-inline const std::string& Person::_internal_name() const {
-  return name_.Get();
-}
-inline void Person::_internal_set_name(const std::string& value) {
-  
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void Person::set_name(std::string&& value) {
-  
-  name_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:Person.name)
-}
-inline void Person::set_name(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:Person.name)
-}
-inline void Person::set_name(const char* value,
-    size_t size) {
-  
-  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:Person.name)
-}
-inline std::string* Person::_internal_mutable_name() {
-  
-  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* Person::release_name() {
-  // @@protoc_insertion_point(field_release:Person.name)
-  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void Person::set_allocated_name(std::string* name) {
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:Person.name)
-}
-inline std::string* Person::unsafe_arena_release_name() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:Person.name)
-  GOOGLE_DCHECK(GetArena() != nullptr);
-  
-  return name_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      GetArena());
-}
-inline void Person::unsafe_arena_set_allocated_name(
-    std::string* name) {
-  GOOGLE_DCHECK(GetArena() != nullptr);
-  if (name != nullptr) {
-    
-  } else {
-    
-  }
-  name_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      name, GetArena());
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:Person.name)
-}
-
-// int32 age = 2;
 inline void Person::clear_age() {
-  age_ = 0;
+  age_.Clear();
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Person::_internal_age() const {
-  return age_;
+inline ::PROTOBUF_NAMESPACE_ID::int32 Person::_internal_age(int index) const {
+  return age_.Get(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 Person::age() const {
+inline ::PROTOBUF_NAMESPACE_ID::int32 Person::age(int index) const {
   // @@protoc_insertion_point(field_get:Person.age)
-  return _internal_age();
+  return _internal_age(index);
 }
-inline void Person::_internal_set_age(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  age_ = value;
-}
-inline void Person::set_age(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_age(value);
+inline void Person::set_age(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  age_.Set(index, value);
   // @@protoc_insertion_point(field_set:Person.age)
 }
-
-// string phone_numbers = 3;
-inline void Person::clear_phone_numbers() {
-  phone_numbers_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline void Person::_internal_add_age(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  age_.Add(value);
 }
-inline const std::string& Person::phone_numbers() const {
-  // @@protoc_insertion_point(field_get:Person.phone_numbers)
-  return _internal_phone_numbers();
+inline void Person::add_age(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_age(value);
+  // @@protoc_insertion_point(field_add:Person.age)
 }
-inline void Person::set_phone_numbers(const std::string& value) {
-  _internal_set_phone_numbers(value);
-  // @@protoc_insertion_point(field_set:Person.phone_numbers)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Person::_internal_age() const {
+  return age_;
 }
-inline std::string* Person::mutable_phone_numbers() {
-  // @@protoc_insertion_point(field_mutable:Person.phone_numbers)
-  return _internal_mutable_phone_numbers();
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+Person::age() const {
+  // @@protoc_insertion_point(field_list:Person.age)
+  return _internal_age();
 }
-inline const std::string& Person::_internal_phone_numbers() const {
-  return phone_numbers_.Get();
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+Person::_internal_mutable_age() {
+  return &age_;
 }
-inline void Person::_internal_set_phone_numbers(const std::string& value) {
-  
-  phone_numbers_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
-}
-inline void Person::set_phone_numbers(std::string&& value) {
-  
-  phone_numbers_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:Person.phone_numbers)
-}
-inline void Person::set_phone_numbers(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  phone_numbers_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
-  // @@protoc_insertion_point(field_set_char:Person.phone_numbers)
-}
-inline void Person::set_phone_numbers(const char* value,
-    size_t size) {
-  
-  phone_numbers_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
-  // @@protoc_insertion_point(field_set_pointer:Person.phone_numbers)
-}
-inline std::string* Person::_internal_mutable_phone_numbers() {
-  
-  return phone_numbers_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline std::string* Person::release_phone_numbers() {
-  // @@protoc_insertion_point(field_release:Person.phone_numbers)
-  return phone_numbers_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-}
-inline void Person::set_allocated_phone_numbers(std::string* phone_numbers) {
-  if (phone_numbers != nullptr) {
-    
-  } else {
-    
-  }
-  phone_numbers_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), phone_numbers,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:Person.phone_numbers)
-}
-inline std::string* Person::unsafe_arena_release_phone_numbers() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:Person.phone_numbers)
-  GOOGLE_DCHECK(GetArena() != nullptr);
-  
-  return phone_numbers_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      GetArena());
-}
-inline void Person::unsafe_arena_set_allocated_phone_numbers(
-    std::string* phone_numbers) {
-  GOOGLE_DCHECK(GetArena() != nullptr);
-  if (phone_numbers != nullptr) {
-    
-  } else {
-    
-  }
-  phone_numbers_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      phone_numbers, GetArena());
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:Person.phone_numbers)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+Person::mutable_age() {
+  // @@protoc_insertion_point(field_mutable_list:Person.age)
+  return _internal_mutable_age();
 }
 
-// string hobby = 4;
+// repeated string hobby = 4;
+inline int Person::_internal_hobby_size() const {
+  return hobby_.size();
+}
+inline int Person::hobby_size() const {
+  return _internal_hobby_size();
+}
 inline void Person::clear_hobby() {
-  hobby_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  hobby_.Clear();
 }
-inline const std::string& Person::hobby() const {
+inline std::string* Person::add_hobby() {
+  // @@protoc_insertion_point(field_add_mutable:Person.hobby)
+  return _internal_add_hobby();
+}
+inline const std::string& Person::_internal_hobby(int index) const {
+  return hobby_.Get(index);
+}
+inline const std::string& Person::hobby(int index) const {
   // @@protoc_insertion_point(field_get:Person.hobby)
-  return _internal_hobby();
+  return _internal_hobby(index);
 }
-inline void Person::set_hobby(const std::string& value) {
-  _internal_set_hobby(value);
-  // @@protoc_insertion_point(field_set:Person.hobby)
-}
-inline std::string* Person::mutable_hobby() {
+inline std::string* Person::mutable_hobby(int index) {
   // @@protoc_insertion_point(field_mutable:Person.hobby)
-  return _internal_mutable_hobby();
+  return hobby_.Mutable(index);
 }
-inline const std::string& Person::_internal_hobby() const {
-  return hobby_.Get();
+inline void Person::set_hobby(int index, const std::string& value) {
+  // @@protoc_insertion_point(field_set:Person.hobby)
+  hobby_.Mutable(index)->assign(value);
 }
-inline void Person::_internal_set_hobby(const std::string& value) {
-  
-  hobby_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+inline void Person::set_hobby(int index, std::string&& value) {
+  // @@protoc_insertion_point(field_set:Person.hobby)
+  hobby_.Mutable(index)->assign(std::move(value));
 }
-inline void Person::set_hobby(std::string&& value) {
-  
-  hobby_.Set(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
-  // @@protoc_insertion_point(field_set_rvalue:Person.hobby)
-}
-inline void Person::set_hobby(const char* value) {
+inline void Person::set_hobby(int index, const char* value) {
   GOOGLE_DCHECK(value != nullptr);
-  
-  hobby_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
-              GetArena());
+  hobby_.Mutable(index)->assign(value);
   // @@protoc_insertion_point(field_set_char:Person.hobby)
 }
-inline void Person::set_hobby(const char* value,
-    size_t size) {
-  
-  hobby_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
-      reinterpret_cast<const char*>(value), size), GetArena());
+inline void Person::set_hobby(int index, const char* value, size_t size) {
+  hobby_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
   // @@protoc_insertion_point(field_set_pointer:Person.hobby)
 }
-inline std::string* Person::_internal_mutable_hobby() {
-  
-  return hobby_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline std::string* Person::_internal_add_hobby() {
+  return hobby_.Add();
 }
-inline std::string* Person::release_hobby() {
-  // @@protoc_insertion_point(field_release:Person.hobby)
-  return hobby_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+inline void Person::add_hobby(const std::string& value) {
+  hobby_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:Person.hobby)
 }
-inline void Person::set_allocated_hobby(std::string* hobby) {
-  if (hobby != nullptr) {
-    
-  } else {
-    
-  }
-  hobby_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), hobby,
-      GetArena());
-  // @@protoc_insertion_point(field_set_allocated:Person.hobby)
+inline void Person::add_hobby(std::string&& value) {
+  hobby_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:Person.hobby)
 }
-inline std::string* Person::unsafe_arena_release_hobby() {
-  // @@protoc_insertion_point(field_unsafe_arena_release:Person.hobby)
-  GOOGLE_DCHECK(GetArena() != nullptr);
-  
-  return hobby_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      GetArena());
+inline void Person::add_hobby(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  hobby_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:Person.hobby)
 }
-inline void Person::unsafe_arena_set_allocated_hobby(
-    std::string* hobby) {
-  GOOGLE_DCHECK(GetArena() != nullptr);
-  if (hobby != nullptr) {
-    
-  } else {
-    
-  }
-  hobby_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      hobby, GetArena());
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:Person.hobby)
+inline void Person::add_hobby(const char* value, size_t size) {
+  hobby_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:Person.hobby)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
+Person::hobby() const {
+  // @@protoc_insertion_point(field_list:Person.hobby)
+  return hobby_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
+Person::mutable_hobby() {
+  // @@protoc_insertion_point(field_mutable_list:Person.hobby)
+  return &hobby_;
 }
 
 // repeated .Address addr = 5;

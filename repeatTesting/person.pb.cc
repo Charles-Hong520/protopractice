@@ -72,9 +72,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_person_2eproto::offsets[] PROT
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  PROTOBUF_FIELD_OFFSET(::Person, name_),
   PROTOBUF_FIELD_OFFSET(::Person, age_),
-  PROTOBUF_FIELD_OFFSET(::Person, phone_numbers_),
   PROTOBUF_FIELD_OFFSET(::Person, hobby_),
   PROTOBUF_FIELD_OFFSET(::Person, addr_),
 };
@@ -91,10 +89,9 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 const char descriptor_table_protodef_person_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\014person.proto\"X\n\007Address\022\016\n\006street\030\001 \001("
   "\t\022\014\n\004city\030\002 \001(\t\022\r\n\005state\030\003 \001(\t\022\017\n\007zipcod"
-  "e\030\004 \001(\005\022\017\n\007history\030\005 \001(\t\"a\n\006Person\022\014\n\004na"
-  "me\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\025\n\rphone_numbers\030\003"
-  " \001(\t\022\r\n\005hobby\030\004 \001(\t\022\026\n\004addr\030\005 \003(\0132\010.Addr"
-  "essb\006proto3"
+  "e\030\004 \001(\005\022\017\n\007history\030\005 \001(\t\"<\n\006Person\022\013\n\003ag"
+  "e\030\002 \003(\005\022\r\n\005hobby\030\004 \003(\t\022\026\n\004addr\030\005 \003(\0132\010.A"
+  "ddressb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_person_2eproto_deps[1] = {
 };
@@ -104,7 +101,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_per
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_person_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_person_2eproto = {
-  false, false, descriptor_table_protodef_person_2eproto, "person.proto", 211,
+  false, false, descriptor_table_protodef_person_2eproto, "person.proto", 174,
   &descriptor_table_person_2eproto_once, descriptor_table_person_2eproto_sccs, descriptor_table_person_2eproto_deps, 2, 0,
   schemas, file_default_instances, TableStruct_person_2eproto::offsets,
   file_level_metadata_person_2eproto, 2, file_level_enum_descriptors_person_2eproto, file_level_service_descriptors_person_2eproto,
@@ -473,6 +470,8 @@ class Person::_Internal {
 
 Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  age_(arena),
+  hobby_(arena),
   addr_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
@@ -480,33 +479,15 @@ Person::Person(::PROTOBUF_NAMESPACE_ID::Arena* arena)
 }
 Person::Person(const Person& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
+      age_(from.age_),
+      hobby_(from.hobby_),
       addr_(from.addr_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_name().empty()) {
-    name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_name(),
-      GetArena());
-  }
-  phone_numbers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_phone_numbers().empty()) {
-    phone_numbers_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_phone_numbers(),
-      GetArena());
-  }
-  hobby_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (!from._internal_hobby().empty()) {
-    hobby_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_hobby(),
-      GetArena());
-  }
-  age_ = from.age_;
   // @@protoc_insertion_point(copy_constructor:Person)
 }
 
 void Person::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_Person_person_2eproto.base);
-  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  phone_numbers_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  hobby_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  age_ = 0;
 }
 
 Person::~Person() {
@@ -517,9 +498,6 @@ Person::~Person() {
 
 void Person::SharedDtor() {
   GOOGLE_DCHECK(GetArena() == nullptr);
-  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  phone_numbers_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  hobby_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void Person::ArenaDtor(void* object) {
@@ -543,11 +521,9 @@ void Person::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  age_.Clear();
+  hobby_.Clear();
   addr_.Clear();
-  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  phone_numbers_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  hobby_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  age_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -559,38 +535,28 @@ const char* Person::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     CHK_(ptr);
     switch (tag >> 3) {
-      // string name = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
-          auto str = _internal_mutable_name();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Person.name"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // int32 age = 2;
+      // repeated int32 age = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          age_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_age(), ptr, ctx);
+          CHK_(ptr);
+        } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16) {
+          _internal_add_age(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
-      // string phone_numbers = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
-          auto str = _internal_mutable_phone_numbers();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Person.phone_numbers"));
-          CHK_(ptr);
-        } else goto handle_unusual;
-        continue;
-      // string hobby = 4;
+      // repeated string hobby = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
-          auto str = _internal_mutable_hobby();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Person.hobby"));
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_hobby();
+            ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "Person.hobby"));
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<34>(ptr));
         } else goto handle_unusual;
         continue;
       // repeated .Address addr = 5;
@@ -633,40 +599,23 @@ failure:
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string name = 1;
-  if (this->name().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Person.name");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name(), target);
+  // repeated int32 age = 2;
+  {
+    int byte_size = _age_cached_byte_size_.load(std::memory_order_relaxed);
+    if (byte_size > 0) {
+      target = stream->WriteInt32Packed(
+          2, _internal_age(), byte_size, target);
+    }
   }
 
-  // int32 age = 2;
-  if (this->age() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_age(), target);
-  }
-
-  // string phone_numbers = 3;
-  if (this->phone_numbers().size() > 0) {
+  // repeated string hobby = 4;
+  for (int i = 0, n = this->_internal_hobby_size(); i < n; i++) {
+    const auto& s = this->_internal_hobby(i);
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_phone_numbers().data(), static_cast<int>(this->_internal_phone_numbers().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Person.phone_numbers");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_phone_numbers(), target);
-  }
-
-  // string hobby = 4;
-  if (this->hobby().size() > 0) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_hobby().data(), static_cast<int>(this->_internal_hobby().length()),
+      s.data(), static_cast<int>(s.length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "Person.hobby");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_hobby(), target);
+    target = stream->WriteString(4, s, target);
   }
 
   // repeated .Address addr = 5;
@@ -693,39 +642,34 @@ size_t Person::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  // repeated int32 age = 2;
+  {
+    size_t data_size = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      Int32Size(this->age_);
+    if (data_size > 0) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+            static_cast<::PROTOBUF_NAMESPACE_ID::int32>(data_size));
+    }
+    int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(data_size);
+    _age_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
+    total_size += data_size;
+  }
+
+  // repeated string hobby = 4;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(hobby_.size());
+  for (int i = 0, n = hobby_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      hobby_.Get(i));
+  }
+
   // repeated .Address addr = 5;
   total_size += 1UL * this->_internal_addr_size();
   for (const auto& msg : this->addr_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // string name = 1;
-  if (this->name().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // string phone_numbers = 3;
-  if (this->phone_numbers().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_phone_numbers());
-  }
-
-  // string hobby = 4;
-  if (this->hobby().size() > 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_hobby());
-  }
-
-  // int32 age = 2;
-  if (this->age() != 0) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
-        this->_internal_age());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -759,19 +703,9 @@ void Person::MergeFrom(const Person& from) {
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
+  age_.MergeFrom(from.age_);
+  hobby_.MergeFrom(from.hobby_);
   addr_.MergeFrom(from.addr_);
-  if (from.name().size() > 0) {
-    _internal_set_name(from._internal_name());
-  }
-  if (from.phone_numbers().size() > 0) {
-    _internal_set_phone_numbers(from._internal_phone_numbers());
-  }
-  if (from.hobby().size() > 0) {
-    _internal_set_hobby(from._internal_hobby());
-  }
-  if (from.age() != 0) {
-    _internal_set_age(from._internal_age());
-  }
 }
 
 void Person::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -795,11 +729,9 @@ bool Person::IsInitialized() const {
 void Person::InternalSwap(Person* other) {
   using std::swap;
   _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  age_.InternalSwap(&other->age_);
+  hobby_.InternalSwap(&other->hobby_);
   addr_.InternalSwap(&other->addr_);
-  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  phone_numbers_.Swap(&other->phone_numbers_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  hobby_.Swap(&other->hobby_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
-  swap(age_, other->age_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Person::GetMetadata() const {

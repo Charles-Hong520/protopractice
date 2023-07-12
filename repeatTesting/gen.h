@@ -24,30 +24,28 @@ void gen_address(Address* addr, int num, int histcnt) {
     addr->set_history(hist);
 }
 
-Person gen_person(int size, int histcnt) {
-
+Person gen_person() {
     Person per;
-    per.set_name("NAME");
-    per.set_age(22);
-    per.set_phone_numbers("PHONE");
-    per.set_hobby("HOBBY");
-    for (int i = 0; i < size; i++) {
-        Address* address = per.add_addr();
-        gen_address(address,i,histcnt);
-    }
+    per.add_age(-2);
+    per.add_age(4);
+    per.add_age(-6);
+    per.add_age(8);
+    per.add_age(10000000);
+
     return per;
 }
 
-void make_file(const std::string & filename, int pcnt, int histcnt) {
+Person make_file(const std::string & filename) {
 
-    Person p = gen_person(pcnt, histcnt);
+    Person p = gen_person();
     std::string name = filename;
     std::fstream output(name, std::ios::out | std::ios::trunc | std::ios::binary);
     if (!p.SerializeToOstream(&output)) {
         std::cerr << "Failed to write person." << std::endl;
-        return;
+        return {};
     }
     output.close();
+    return p;
 }
 
 #endif
