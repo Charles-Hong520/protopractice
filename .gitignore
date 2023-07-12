@@ -33,4 +33,9 @@
 person
 gen
 tp
+profile
+zz.prof
+zzprof_corr.txt
+zzprof_man.txt
+*.json
 *.bin

@@ -1,0 +1,140 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "widget": {
+      "type": "object",
+      "properties": {
+        "debug": {
+          "type": "string"
+        },
+        "window": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "height",
+              "name",
+              "title",
+              "width"
+            ]
+          }
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "hOffset": {
+              "type": "integer"
+            },
+            "vOffset": {
+              "type": "integer"
+            },
+            "alignment": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alignment",
+            "hOffset",
+            "name",
+            "src",
+            "vOffset"
+          ]
+        },
+        "text": {
+          "type": "object",
+          "properties": {
+            "data": {
+              "type": "string"
+            },
+            "size": {
+              "type": "integer"
+            },
+            "style": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "hOffset": {
+              "type": "integer"
+            },
+            "vOffset": {
+              "type": "integer"
+            },
+            "alignment": {
+              "type": "string"
+            },
+            "onMouseUp": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "alignment",
+            "data",
+            "hOffset",
+            "name",
+            "onMouseUp",
+            "size",
+            "style",
+            "vOffset"
+          ]
+        },
+        "ints": {
+          "type": "array",
+          "items": {
+            "anyOf": [
+              {
+                "type": [
+                  "integer",
+                  "string"
+                ]
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "nestedintobj": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "nestedintobj"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "required": [
+        "debug",
+        "image",
+        "ints",
+        "text",
+        "window"
+      ]
+    }
+  },
+  "required": [
+    "widget"
+  ]
+}

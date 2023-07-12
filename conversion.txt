@@ -1,0 +1,2 @@
+json to json schema : genson -i 2 FILE.JSON > OUTPUT.JSON
+json schema to proto : jsonschema-protobuf FILE.JSON
