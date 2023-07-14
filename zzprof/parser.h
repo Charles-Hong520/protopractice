@@ -36,7 +36,7 @@ class Parser {
   size_t content_size;
   BS::synced_stream sync_out;
   BS::thread_pool pool;
-  std::map<int, double> timemap;
+  std::vector<std::vector<uint32_t>> packedcheck;
   std::map<int, long long> sizemap;
   std::chrono::time_point<std::chrono::system_clock> start_T, end_T;
   long long start_S, end_S;
@@ -52,7 +52,7 @@ class Parser {
   pp::Profile profile_correct;
 
   void print_difference();
-  void parseProfile();
+  void printLogistics();
   void consumeProfile();
 
   void parseFromAPI() {

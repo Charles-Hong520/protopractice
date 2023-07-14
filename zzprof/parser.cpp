@@ -2,7 +2,7 @@
 
 Parser::Parser(const std::string &fn) {
   filename = fn;
-  THRESHOLD = 1000000;
+  THRESHOLD = 1000;
   constexpr size_t MAX_CONTENT_SIZE = 1e9;  // Set an appropriate maximum content size
   content = new uint8_t[MAX_CONTENT_SIZE];
   content_size = 0;
@@ -38,34 +38,45 @@ void Parser::print_difference() {
   }
 }
 
-void Parser::parseProfile() {
+void Parser::printLogistics() {
   // profile.ParseFromCodedStream(input);
-  cout << std::fixed << std::setprecision(4);
+  // cout << std::fixed << std::setprecision(4);
 
-  cout << endl;
-
-  cout << "case occurance profile" << endl;
-  for (auto &[num, val] : timemap) {
-    cout << num << ":\t" << val << endl;
-  }
   cout << endl;
 
   cout << "len occurance profile" << endl;
   for (auto &[len, occur] : sizemap) {
-    cout << len << ":\t" << occur << endl;
+    cout.width(10);
+    std::string lenstr = std::to_string(len) + "-" + std::to_string(len + 29) + ":";
+    cout << std::left << lenstr;
+    cout.width(10);
+    cout << std::left << occur << endl;
   }
+  int sum = 0;
   cout << endl;
+
+  cout << "packed order and their length" << endl;
+  for (auto p : packedcheck) {
+    cout << p[0] << ":\t" << p[1] << endl;
+    sum += p[1];
+  }
+
+  cout << endl;
+
+  cout << "total bytes of file: " << sum << endl;
 }
 
 void Parser::consumeProfile() {
+  start_T = std::chrono::system_clock::now();
+
   gp::io::CodedInputStream *input = new gp::io::CodedInputStream(content, content_size);
+
+  uint32_t startPos = input->CurrentPosition();
+
   uint32_t tag = input->ReadTag();
   uint32_t field_id, wire, currPos, len;
 
-  int cnt = 0;
-
   while (tag != 0) {
-    len = 0;
     field_id = tag >> 3;
     wire = tag & 7;
     // handle a record
@@ -253,8 +264,23 @@ void Parser::consumeProfile() {
         }
         break;
     }
+
+    sizemap[(input->CurrentPosition() - startPos) / 30 * 30]++;
+    if (packedcheck.empty()) {
+      packedcheck.push_back({field_id, (input->CurrentPosition() - startPos)});
+    } else {
+      if (packedcheck.back()[0] == field_id) {
+        packedcheck.back()[1] += (input->CurrentPosition() - startPos);
+      } else {
+        packedcheck.push_back({field_id, (input->CurrentPosition() - startPos)});
+      }
+    }
+    startPos = input->CurrentPosition();
     tag = input->ReadTag();
   }
+  end_T = std::chrono::system_clock::now();
+  elapsed_seconds = end_T - start_T;
+  cout << "master thread time with threshold " << THRESHOLD << ": " << elapsed_seconds.count() << endl;
   pool.wait_for_tasks();
 }
 
