@@ -24,14 +24,14 @@ Parser::~Parser() {
   content = nullptr;
 }
 
-void Parser::print_difference(const pp::Profile &correct_profile) {
+void Parser::print_difference() {
   // cout << "Comparing Difference" << endl;
   // if (!gp::util::MessageDifferencer::ApproximatelyEquivalent(profile, correct_profile)) {
   //   std::cout << "NOT APPROX EQUIV\n";
   // } else {
   //   std::cout << "APPROX EQUIV\n";
   // }
-  if (!gp::util::MessageDifferencer::Equivalent(profile, correct_profile)) {
+  if (!gp::util::MessageDifferencer::Equivalent(profile, profile_correct)) {
     std::cout << "NOT EQUIV\n";
   } else {
     std::cout << "EQUIV\n";
@@ -61,6 +61,9 @@ void Parser::consumeProfile() {
   gp::io::CodedInputStream *input = new gp::io::CodedInputStream(content, content_size);
   uint32_t tag = input->ReadTag();
   uint32_t field_id, wire, currPos, len;
+
+  int cnt = 0;
+
   while (tag != 0) {
     len = 0;
     field_id = tag >> 3;
@@ -77,7 +80,6 @@ void Parser::consumeProfile() {
             // thread pool
             currPos = input->CurrentPosition();
             input->Skip(len);
-
             pool.push_task(&Parser::consumeValueType, this, currPos, len, msg);
             //    create new stream with limits
             //    consume will be handled by this function by default
@@ -98,21 +100,13 @@ void Parser::consumeProfile() {
           pp::Sample *msg = profile.add_sample();
 
           if (len > THRESHOLD) {
-            // thread pool
             currPos = input->CurrentPosition();
             input->Skip(len);
-
             pool.push_task(&Parser::consumeSample, this, currPos, len, msg);
-            //    create new stream with limits
-            //    consume will be handled by this function by default
           } else {
-            // seq
-            // use pushlimit and poplimit
-            // use API
             auto lim = input->PushLimit(len);
-            msg->ParseFromCodedStream(input);
-
-            // seqConsumeSample(input, msg, len);
+            // msg->ParseFromCodedStream(input);
+            seqConsumeSample(input, msg);
             input->PopLimit(lim);
           }
         }
@@ -124,17 +118,10 @@ void Parser::consumeProfile() {
           pp::Mapping *msg = profile.add_mapping();
 
           if (len > THRESHOLD) {
-            // thread pool
             currPos = input->CurrentPosition();
             input->Skip(len);
-
             pool.push_task(&Parser::consumeMapping, this, currPos, len, msg);
-            //    create new stream with limits
-            //    consume will be handled by this function by default
           } else {
-            // seq
-            // use pushlimit and poplimit
-            // use API
             auto lim = input->PushLimit(len);
             msg->ParseFromCodedStream(input);
             input->PopLimit(lim);
@@ -148,17 +135,11 @@ void Parser::consumeProfile() {
           pp::Location *msg = profile.add_location();
 
           if (len > THRESHOLD) {
-            // thread pool
             currPos = input->CurrentPosition();
             input->Skip(len);
 
             pool.push_task(&Parser::consumeLocation, this, currPos, len, msg);
-            //    create new stream with limits
-            //    consume will be handled by this function by default
           } else {
-            // seq
-            // use pushlimit and poplimit
-            // use API
             auto lim = input->PushLimit(len);
             msg->ParseFromCodedStream(input);
             input->PopLimit(lim);
@@ -172,18 +153,10 @@ void Parser::consumeProfile() {
           pp::Function *msg = profile.add_function();
 
           if (len > THRESHOLD) {
-            // thread pool
-
             currPos = input->CurrentPosition();
             input->Skip(len);
-
             pool.push_task(&Parser::consumeFunction, this, currPos, len, msg);
-            //    create new stream with limits
-            //    consume will be handled by this function by default
           } else {
-            // seq
-            // use pushlimit and poplimit
-            // use API
             auto lim = input->PushLimit(len);
             msg->ParseFromCodedStream(input);
             input->PopLimit(lim);
@@ -191,7 +164,7 @@ void Parser::consumeProfile() {
         }
         break;
       case 6:
-        //   repeated string string_table = 6;
+        //  repeated string string_table = 6;
         //  repeated strings are fine.
         if (wire == 2) {
           uint32_t len;
@@ -202,7 +175,7 @@ void Parser::consumeProfile() {
         }
         break;
       case 7:
-        //   int64 drop_frames = 7;
+        //  int64 drop_frames = 7;
         if (wire == 0) {
           uint64_t i;
           input->ReadVarint64(&i);
@@ -240,17 +213,10 @@ void Parser::consumeProfile() {
           pp::ValueType *msg = profile.mutable_period_type();
 
           if (len > THRESHOLD) {
-            // thread pool
             currPos = input->CurrentPosition();
             input->Skip(len);
-
             pool.push_task(&Parser::consumeValueType, this, currPos, len, msg);
-            //    create new stream with limits
-            //    consume will be handled by this function by default
           } else {
-            // seq
-            // use pushlimit and poplimit
-            // use API
             auto lim = input->PushLimit(len);
             msg->ParseFromCodedStream(input);
             input->PopLimit(lim);
@@ -270,8 +236,6 @@ void Parser::consumeProfile() {
         if (wire == 2) {
           uint32_t len;
           input->ReadVarint32(&len);
-
-          // can be parallelized
           uint64_t end = len + input->CurrentPosition();
           uint64_t i;
           while (input->CurrentPosition() < end) {
@@ -289,10 +253,7 @@ void Parser::consumeProfile() {
         }
         break;
     }
-
     tag = input->ReadTag();
-    // sizemap[len]++;
-    // timemap[field_id]++;
   }
   pool.wait_for_tasks();
 }
@@ -330,9 +291,11 @@ void Parser::consumeProfile() {
 
 void Parser::seqConsumeLabel(gp::io::CodedInputStream *input, pp::Label *msg) {
   uint32_t tag = input->ReadTag();
+  uint32_t field_id, wire, len;
+  uint32_t end;
   while (tag != 0) {
-    uint32_t field_id = tag >> 3;
-    uint32_t wire = tag & 7;
+    field_id = tag >> 3;
+    wire = tag & 7;
     // handle a record
     switch (field_id) {
       case 1:  // key
@@ -380,13 +343,11 @@ void Parser::consumeMapping(uint32_t currPos, uint32_t len, pp::Mapping *msg) {
   msg->ParseFromCodedStream(input);
 }
 
-void Parser::seqConsumeSample(gp::io::CodedInputStream *input, pp::Sample *msg, uint32_t msglen) {
-  uint32_t start = input->CurrentPosition();
-
+void Parser::seqConsumeSample(gp::io::CodedInputStream *input, pp::Sample *msg) {
   uint32_t tag = input->ReadTag();
   uint32_t field_id, wire, len;
   uint32_t end;
-  while (input->CurrentPosition() - start < msglen) {
+  while (tag != 0) {
     field_id = tag >> 3;
     wire = tag & 7;
     // handle a record
@@ -395,37 +356,31 @@ void Parser::seqConsumeSample(gp::io::CodedInputStream *input, pp::Sample *msg, 
       case 1:  // location id
         if (wire == 2) {
           input->ReadVarint32(&len);
-          // can be parallelized
           end = len + input->CurrentPosition();
           uint64_t i;
           while (input->CurrentPosition() < end) {
             input->ReadVarint64(&i);
             msg->add_location_id(i);
           }
-          cout << "leaving case 1, wire 2" << endl;
         } else if (wire == 0) {
           uint64_t i;
           input->ReadVarint64(&i);
           msg->add_location_id(i);
-          cout << "leaving case 1, wire 0" << endl;
         }
         break;
       case 2:  // value
         if (wire == 2) {
           input->ReadVarint32(&len);
-          // can be parallelized
           end = len + input->CurrentPosition();
           uint64_t i;
           while (input->CurrentPosition() < end) {
             input->ReadVarint64(&i);
             msg->add_value(i);
           }
-          cout << "leaving case 2, wire 2" << endl;
         } else if (wire == 0) {
           uint64_t i;
           input->ReadVarint64(&i);
           msg->add_value(i);
-          cout << "leaving case 2, wire 0" << endl;
         }
         break;
       case 3:  // label
@@ -436,16 +391,14 @@ void Parser::seqConsumeSample(gp::io::CodedInputStream *input, pp::Sample *msg, 
           pp::Label *label = msg->add_label();
           auto lim = input->PushLimit(len);
 
-          msg->ParseFromCodedStream(input);
-          // seqConsumeLabel(input, label);
+          // label->ParseFromCodedStream(input);
+          seqConsumeLabel(input, label);
           input->PopLimit(lim);
-          cout << "leaving case 3 in sample" << endl;
         }
         break;
       default: {
       }
     }
-    // cout << field_id << " " << input->CurrentPosition() << endl;
     tag = input->ReadTag();
   }
 }
@@ -453,7 +406,8 @@ void Parser::seqConsumeSample(gp::io::CodedInputStream *input, pp::Sample *msg, 
 void Parser::consumeSample(uint32_t currPos, uint32_t len, pp::Sample *msg) {
   gp::io::CodedInputStream *input = new gp::io::CodedInputStream(
       content + currPos, len);
-  msg->ParseFromCodedStream(input);
+  // msg->ParseFromCodedStream(input);
+  seqConsumeSample(input, msg);
 }
 
 void Parser::consumeLocation(uint32_t currPos, uint32_t len, pp::Location *msg) {

@@ -28,27 +28,28 @@ int main() {
   std::chrono::time_point<std::chrono::system_clock> start, end;
   std::chrono::duration<double> elapsed_seconds;
 
-  Parser parser("zz.prof");
-  std::cout << "Parsing zz.prof manually" << endl;
-  for (int i = 0; i < 1; i++) {
-    start = std::chrono::system_clock::now();
-    parser.consumeProfile();
-    end = std::chrono::system_clock::now();
-    elapsed_seconds = end - start;
-    std::cout << "elapsed time for MANUAL: " << elapsed_seconds.count() << "s\n";
-  }
+  std::string file = "zz.prof";
+  Parser parser(file);
 
-  std::fstream cinput("zz.prof", std::ios::in | std::ios::binary);
-  std::cout << "Parsing zz.prof with protobuf API" << std::endl;
+  std::cout << "Parsing " << file << " with protobuf API" << std::endl;
   start = std::chrono::system_clock::now();
-  perftools::profiles::Profile correct_profile;
-  correct_profile.ParseFromIstream(&cinput);
+  // std::fstream cinput(file, std::ios::in | std::ios::binary);
+  // perftools::profiles::Profile correct_profile;
+  // correct_profile.ParseFromIstream(&cinput);
+  parser.parseFromAPI();
   end = std::chrono::system_clock::now();
   elapsed_seconds = end - start;
   std::cout << "elapsed time for CORRECT: " << elapsed_seconds.count() << "s\n";
-  cinput.close();
+  // cinput.close();
 
-  parser.print_difference(correct_profile);
+  std::cout << "Parsing " << file << " manually" << endl;
+  start = std::chrono::system_clock::now();
+  parser.consumeProfile();
+  end = std::chrono::system_clock::now();
+  elapsed_seconds = end - start;
+  std::cout << "elapsed time for MANUAL: " << elapsed_seconds.count() << "s\n";
+
+  parser.print_difference();
 
   // write string of message to see what it looks like.
   // std::ofstream fout1("zzprof_corr.txt");

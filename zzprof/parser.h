@@ -49,10 +49,16 @@ class Parser {
   ~Parser();
 
   pp::Profile profile;
-  pp::Profile profile_sample;
-  void print_difference(const pp::Profile&);
+  pp::Profile profile_correct;
+
+  void print_difference();
   void parseProfile();
   void consumeProfile();
+
+  void parseFromAPI() {
+    gp::io::CodedInputStream* input = new gp::io::CodedInputStream(content, content_size);
+    profile_correct.ParseFromCodedStream(input);
+  }
 
  private:
   void load_content();
@@ -66,7 +72,7 @@ class Parser {
   void consumeLine(uint32_t currPos, uint32_t len, pp::Line* msg);
   void consumeFunction(uint32_t currPos, uint32_t len, pp::Function* msg);
 
-  void seqConsumeSample(gp::io::CodedInputStream*, pp::Sample* msg, uint32_t);
+  void seqConsumeSample(gp::io::CodedInputStream*, pp::Sample* msg);
   void seqConsumeLabel(gp::io::CodedInputStream*, pp::Label* msg);
 };
 #endif
