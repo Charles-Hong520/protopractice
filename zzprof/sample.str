@@ -1,0 +1,70 @@
+sample {
+  location_id: 1
+  location_id: 2
+  value: 1
+  value: 10000000
+}
+sample {
+  location_id: 3
+  location_id: 4
+  location_id: 5
+  location_id: 6
+  location_id: 7
+  location_id: 8
+  location_id: 9
+  location_id: 10
+  location_id: 11
+  location_id: 12
+  location_id: 13
+  location_id: 14
+  location_id: 15
+  location_id: 16
+  location_id: 17
+  location_id: 18
+  location_id: 19
+  location_id: 20
+  location_id: 21
+  value: 15
+  value: 150000000
+}
+sample {
+  location_id: 22
+  location_id: 21
+  value: 1
+  value: 10000000
+}
+sample {
+  location_id: 23
+  location_id: 11
+  location_id: 12
+  location_id: 13
+  location_id: 14
+  location_id: 15
+  location_id: 24
+  value: 1
+  value: 10000000
+}
+sample {
+  location_id: 25
+  location_id: 26
+  location_id: 27
+  location_id: 28
+  location_id: 29
+  location_id: 30
+  location_id: 31
+  location_id: 32
+  location_id: 33
+  location_id: 34
+  location_id: 35
+  location_id: 36
+  location_id: 37
+  location_id: 38
+  location_id: 39
+  location_id: 34
+  location_id: 35
+  location_id: 40
+  location_id: 41
+  value: 1
+  value: 10000000
+}
+

@@ -20,25 +20,32 @@
 #include "profile.pb.h"  // Replace with the name of your generated header file.
 
 /*
-g++ -std=c++17 main2.cpp profile.pb.cc -lprotobuf -lpthread -O3 -o profile && ./profile
-g++ -std=c++17 main2.cpp profile.pb.cc -lprotobuf -lpthread -O3 -o profile
+g++ -std=c++17 main2.cpp parser.cpp profile.pb.cc -lprotobuf -lpthread -O3 -o profile2 && ./profile2
+g++ -std=c++17 main2.cpp parser.cpp profile.pb.cc -lprotobuf -lpthread -O3 -o profile2
 */
 
 int main() {
-  // Parser parser("zz.prof");
-  // Parse input file using protobuf official API
   std::chrono::time_point<std::chrono::system_clock> start, end;
   std::chrono::duration<double> elapsed_seconds;
 
-  std::fstream cinput("zz.prof", std::ios::in | std::ios::binary);
-  std::cout << "Parsing zz.prof with protobuf API" << std::endl;
-  start = std::chrono::system_clock::now();
-  perftools::profiles::Profile correct_profile;
-  correct_profile.ParseFromIstream(&cinput);
-  end = std::chrono::system_clock::now();
-  elapsed_seconds = end - start;
-  std::cout << "elapsed time for CORRECT: " << elapsed_seconds.count() << "s\n";
-  cinput.close();
+  std::string file = "zz.prof";
+  Parser parser(file);
+
+  {
+    std::cout << "Parsing " << file << " with protobuf API" << std::endl;
+    start = std::chrono::system_clock::now();
+    // std::fstream cinput(file, std::ios::in | std::ios::binary);
+    // perftools::profiles::Profile correct_profile;
+    // correct_profile.ParseFromIstream(&cinput);
+    parser.parseFromAPI();
+    end = std::chrono::system_clock::now();
+    elapsed_seconds = end - start;
+    std::cout << "elapsed time for CORRECT: " << elapsed_seconds.count() << "s\n";
+
+    std::string s_correct;
+    parser.profile_correct.SerializeToString(&s_correct);
+    cout << "size correct: " << s_correct.size() << endl;
+  }
 
   return 0;
 }

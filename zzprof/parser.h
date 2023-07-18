@@ -42,6 +42,7 @@ class Parser {
   long long start_S, end_S;
   std::chrono::duration<double> elapsed_seconds;
   uint32_t THRESHOLD;
+  std::vector<pp::Profile*> sub_profiles;
 
  public:
   Parser();
@@ -74,5 +75,7 @@ class Parser {
 
   void seqConsumeSample(gp::io::CodedInputStream*, pp::Sample* msg);
   void seqConsumeLabel(gp::io::CodedInputStream*, pp::Label* msg);
+
+  void consumeChunk(uint32_t start, uint32_t end, uint32_t index);
 };
 #endif
