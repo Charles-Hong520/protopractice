@@ -19,6 +19,7 @@
 #include <sstream>
 #include <vector>
 
+#include "parallel.h"
 #include "profile.pb.h"  // Replace with the name of your generated header file.
 // https://github.com/bshoshany/thread-pool.git
 #include "BS_thread_pool.hpp"
@@ -43,6 +44,8 @@ class Parser {
   std::chrono::duration<double> elapsed_seconds;
   uint32_t THRESHOLD;
   std::vector<pp::Profile*> sub_profiles;
+  // 15 field ids, each id has a vector of len and currpos
+  std::vector<std::vector<std::pair<uint64_t, uint64_t>>> tracker;  // currpos, len
 
  public:
   Parser();
@@ -77,5 +80,7 @@ class Parser {
   void seqConsumeLabel(gp::io::CodedInputStream*, pp::Label* msg);
 
   void consumeChunk(uint32_t start, uint32_t end, uint32_t index);
+
+  // void helper(void (pp::Profile::*mutable)(int), pp::Profile& prof, int field_id);
 };
 #endif
