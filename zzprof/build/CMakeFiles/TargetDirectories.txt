@@ -1,0 +1,3 @@
+/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/ProfileProject.dir
+/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/edit_cache.dir
+/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/rebuild_cache.dir

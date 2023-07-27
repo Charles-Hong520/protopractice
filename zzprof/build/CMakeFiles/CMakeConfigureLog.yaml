@@ -1,0 +1,663 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineSystem.cmake:211 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 4.18.0-348.12.2.el8_5.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/rh/gcc-toolset-9/root/usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /rhome/dparm003/protopractice/zzprof/build/CMakeFiles/3.27.1/CompilerIdC/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/rh/gcc-toolset-9/root/usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /rhome/dparm003/protopractice/zzprof/build/CMakeFiles/3.27.1/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq"
+      binary: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq'
+        
+        Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_6b413/fast
+        /opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_6b413.dir/build.make CMakeFiles/cmTC_6b413.dir/build
+        gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq'
+        Building C object CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc   -v -o CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -c /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/cc
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+        Thread model: posix
+        gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/cc1 -quiet -v /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -version -o /scratch/dparm003//ccK7xFdD.s
+        GNU C17 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)
+        	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2), GMP version 6.1.2, MPFR version 3.1.6-p2, MPC version 1.0.2, isl version isl-0.16.1-GMP
+        
+        warning: MPC header version 1.0.2 differs from library version 1.1.0.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include-fixed"
+        ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include
+         /opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include
+         /opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include
+         /opt/linux/rocky/8.x/x86_64/pkgs/java/17.0.2/include
+         /opt/linux/rocky/8.x/x86_64/pkgs/slurm/23.02.2/include
+         /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include
+         /usr/local/include
+         /opt/rh/gcc-toolset-9/root/usr/include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)
+        	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2), GMP version 6.1.2, MPFR version 3.1.6-p2, MPC version 1.0.2, isl version isl-0.16.1-GMP
+        
+        warning: MPC header version 1.0.2 differs from library version 1.1.0.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: a47312c09867bf5ad5fe5a7bbafad632
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o /scratch/dparm003//ccK7xFdD.s
+        GNU assembler version 2.32 (x86_64-redhat-linux) using BFD version version 2.32-17.el8_1
+        COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64'
+        Linking C executable cmTC_6b413
+        /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b413.dir/link.txt --verbose=1
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc  -v CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -o cmTC_6b413 
+        Using built-in specs.
+        COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+        Thread model: posix
+        gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) 
+        COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6b413' '-mtune=generic' '-march=x86-64'
+         /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/collect2 -plugin /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/liblto_plugin.so -plugin-opt=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper -plugin-opt=-fresolution=/scratch/dparm003//cc38wFs4.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6b413 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib -L/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../.. CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o /lib/../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6b413' '-mtune=generic' '-march=x86-64'
+        gmake[1]: Leaving directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include]
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include]
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include]
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/java/17.0.2/include]
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/slurm/23.02.2/include]
+          add: [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include]
+          add: [/usr/local/include]
+          add: [/opt/rh/gcc-toolset-9/root/usr/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include]
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include]
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include]
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/java/17.0.2/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/java/17.0.2/include]
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/slurm/23.02.2/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/slurm/23.02.2/include]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include] ==> [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/include] ==> [/opt/rh/gcc-toolset-9/root/usr/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include;/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include;/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include;/opt/linux/rocky/8.x/x86_64/pkgs/java/17.0.2/include;/opt/linux/rocky/8.x/x86_64/pkgs/slurm/23.02.2/include;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include;/usr/local/include;/opt/rh/gcc-toolset-9/root/usr/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq']
+        ignore line: []
+        ignore line: [Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_6b413/fast]
+        ignore line: [/opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_6b413.dir/build.make CMakeFiles/cmTC_6b413.dir/build]
+        ignore line: [gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gKHFxq']
+        ignore line: [Building C object CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/opt/rh/gcc-toolset-9/root/usr/bin/cc   -v -o CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -c /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/cc]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/cc1 -quiet -v /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCCompilerABI.c -quiet -dumpbase CMakeCCompilerABI.c -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -version -o /scratch/dparm003//ccK7xFdD.s]
+        ignore line: [GNU C17 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2)  GMP version 6.1.2  MPFR version 3.1.6-p2  MPC version 1.0.2  isl version isl-0.16.1-GMP]
+        ignore line: []
+        ignore line: [warning: MPC header version 1.0.2 differs from library version 1.1.0.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/java/17.0.2/include]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/slurm/23.02.2/include]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2)  GMP version 6.1.2  MPFR version 3.1.6-p2  MPC version 1.0.2  isl version isl-0.16.1-GMP]
+        ignore line: []
+        ignore line: [warning: MPC header version 1.0.2 differs from library version 1.1.0.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: a47312c09867bf5ad5fe5a7bbafad632]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o /scratch/dparm003//ccK7xFdD.s]
+        ignore line: [GNU assembler version 2.32 (x86_64-redhat-linux) using BFD version version 2.32-17.el8_1]
+        ignore line: [COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking C executable cmTC_6b413]
+        ignore line: [/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6b413.dir/link.txt --verbose=1]
+        ignore line: [/opt/rh/gcc-toolset-9/root/usr/bin/cc  -v CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -o cmTC_6b413 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_6b413' '-mtune=generic' '-march=x86-64']
+        link line: [ /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/collect2 -plugin /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/liblto_plugin.so -plugin-opt=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper -plugin-opt=-fresolution=/scratch/dparm003//cc38wFs4.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_6b413 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib -L/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../.. CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o /lib/../lib64/crtn.o]
+          arg [/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/scratch/dparm003//cc38wFs4.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_6b413] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o] ==> obj [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64]
+          arg [-L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9] ==> dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9]
+          arg [-L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64] ==> dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib]
+          arg [-L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../..] ==> dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../..]
+          arg [CMakeFiles/cmTC_6b413.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o] ==> obj [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64]
+        collapse library dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9] ==> [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9]
+        collapse library dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64] ==> [/opt/rh/gcc-toolset-9/root/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib]
+        collapse library dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../..] ==> [/opt/rh/gcc-toolset-9/root/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9;/opt/rh/gcc-toolset-9/root/usr/lib64;/lib64;/usr/lib64;/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib;/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib;/opt/rh/gcc-toolset-9/root/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r"
+      binary: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r'
+        
+        Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_8cd07/fast
+        /opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_8cd07.dir/build.make CMakeFiles/cmTC_8cd07.dir/build
+        gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r'
+        Building CXX object CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o
+        /opt/rh/gcc-toolset-9/root/usr/bin/c++   -v -o CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -c /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/c++
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+        Thread model: posix
+        gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -version -o /scratch/dparm003//ccWVCbfg.s
+        GNU C++14 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)
+        	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2), GMP version 6.1.2, MPFR version 3.1.6-p2, MPC version 1.0.2, isl version isl-0.16.1-GMP
+        
+        warning: MPC header version 1.0.2 differs from library version 1.1.0.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include-fixed"
+        ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include
+         /opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include
+         /opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include
+         /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9
+         /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/x86_64-redhat-linux
+         /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/backward
+         /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include
+         /usr/local/include
+         /opt/rh/gcc-toolset-9/root/usr/include
+         /usr/include
+        End of search list.
+        GNU C++14 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)
+        	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2), GMP version 6.1.2, MPFR version 3.1.6-p2, MPC version 1.0.2, isl version isl-0.16.1-GMP
+        
+        warning: MPC header version 1.0.2 differs from library version 1.1.0.
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: bce5e9a5ab6e05e4b82e56e01ef80848
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         as -v --64 -o CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o /scratch/dparm003//ccWVCbfg.s
+        GNU assembler version 2.32 (x86_64-redhat-linux) using BFD version version 2.32-17.el8_1
+        COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        Linking CXX executable cmTC_8cd07
+        /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cd07.dir/link.txt --verbose=1
+        /opt/rh/gcc-toolset-9/root/usr/bin/c++  -v CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8cd07 
+        Using built-in specs.
+        COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-languages=c,c++,fortran,lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux
+        Thread model: posix
+        gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) 
+        COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8cd07' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+         /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/collect2 -plugin /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/liblto_plugin.so -plugin-opt=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper -plugin-opt=-fresolution=/scratch/dparm003//ccWpMnKK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8cd07 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib -L/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../.. CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o /lib/../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8cd07' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+        gmake[1]: Leaving directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include]
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include]
+          add: [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include]
+          add: [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9]
+          add: [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/x86_64-redhat-linux]
+          add: [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/backward]
+          add: [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include]
+          add: [/usr/local/include]
+          add: [/opt/rh/gcc-toolset-9/root/usr/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include]
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include]
+        collapse include dir [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9] ==> [/opt/rh/gcc-toolset-9/root/usr/include/c++/9]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/x86_64-redhat-linux] ==> [/opt/rh/gcc-toolset-9/root/usr/include/c++/9/x86_64-redhat-linux]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/backward] ==> [/opt/rh/gcc-toolset-9/root/usr/include/c++/9/backward]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include] ==> [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/opt/rh/gcc-toolset-9/root/usr/include] ==> [/opt/rh/gcc-toolset-9/root/usr/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include;/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include;/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include;/opt/rh/gcc-toolset-9/root/usr/include/c++/9;/opt/rh/gcc-toolset-9/root/usr/include/c++/9/x86_64-redhat-linux;/opt/rh/gcc-toolset-9/root/usr/include/c++/9/backward;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include;/usr/local/include;/opt/rh/gcc-toolset-9/root/usr/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r']
+        ignore line: []
+        ignore line: [Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_8cd07/fast]
+        ignore line: [/opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_8cd07.dir/build.make CMakeFiles/cmTC_8cd07.dir/build]
+        ignore line: [gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Zwsu9r']
+        ignore line: [Building CXX object CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/opt/rh/gcc-toolset-9/root/usr/bin/c++   -v -o CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -c /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/c++]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/cc1plus -quiet -v -D_GNU_SOURCE /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpbase CMakeCXXCompilerABI.cpp -mtune=generic -march=x86-64 -auxbase-strip CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -version -o /scratch/dparm003//ccWVCbfg.s]
+        ignore line: [GNU C++14 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2)  GMP version 6.1.2  MPFR version 3.1.6-p2  MPC version 1.0.2  isl version isl-0.16.1-GMP]
+        ignore line: []
+        ignore line: [warning: MPC header version 1.0.2 differs from library version 1.1.0.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/include]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/include]
+        ignore line: [ /opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/include]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/x86_64-redhat-linux]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../include/c++/9/backward]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /opt/rh/gcc-toolset-9/root/usr/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++14 (GCC) version 9.2.1 20191120 (Red Hat 9.2.1-2) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 9.2.1 20191120 (Red Hat 9.2.1-2)  GMP version 6.1.2  MPFR version 3.1.6-p2  MPC version 1.0.2  isl version isl-0.16.1-GMP]
+        ignore line: []
+        ignore line: [warning: MPC header version 1.0.2 differs from library version 1.1.0.]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: bce5e9a5ab6e05e4b82e56e01ef80848]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o /scratch/dparm003//ccWVCbfg.s]
+        ignore line: [GNU assembler version 2.32 (x86_64-redhat-linux) using BFD version version 2.32-17.el8_1]
+        ignore line: [COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        ignore line: [Linking CXX executable cmTC_8cd07]
+        ignore line: [/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8cd07.dir/link.txt --verbose=1]
+        ignore line: [/opt/rh/gcc-toolset-9/root/usr/bin/c++  -v CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_8cd07 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/opt/rh/gcc-toolset-9/root/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-languages=c c++ fortran lto --prefix=/opt/rh/gcc-toolset-9/root/usr --mandir=/opt/rh/gcc-toolset-9/root/usr/share/man --infodir=/opt/rh/gcc-toolset-9/root/usr/share/info --with-bugurl=http://bugzilla.redhat.com/bugzilla --enable-shared --enable-threads=posix --enable-checking=release --enable-multilib --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --with-linker-hash-style=gnu --enable-plugin --enable-initfini-array --with-isl=/builddir/build/BUILD/gcc-9.2.1-20191120/obj-x86_64-redhat-linux/isl-install --disable-libmpx --enable-gnu-indirect-function --with-tune=generic --with-arch_32=x86-64 --build=x86_64-redhat-linux]
+        ignore line: [Thread model: posix]
+        ignore line: [gcc version 9.2.1 20191120 (Red Hat 9.2.1-2) (GCC) ]
+        ignore line: [COMPILER_PATH=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/:/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib/:/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib/:/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_8cd07' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+        link line: [ /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/collect2 -plugin /opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/liblto_plugin.so -plugin-opt=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper -plugin-opt=-fresolution=/scratch/dparm003//ccWpMnKK.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_8cd07 /lib/../lib64/crt1.o /lib/../lib64/crti.o /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9 -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64 -L/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib -L/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib -L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../.. CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o /lib/../lib64/crtn.o]
+          arg [/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/opt/rh/gcc-toolset-9/root/usr/libexec/gcc/x86_64-redhat-linux/9/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/scratch/dparm003//ccWpMnKK.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_8cd07] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o] ==> obj [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64]
+          arg [-L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9] ==> dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9]
+          arg [-L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64] ==> dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib]
+          arg [-L/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib] ==> dir [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib]
+          arg [-L/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../..] ==> dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../..]
+          arg [CMakeFiles/cmTC_8cd07.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o] ==> obj [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64/../lib64] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64]
+        collapse library dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9] ==> [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9]
+        collapse library dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../../../lib64] ==> [/opt/rh/gcc-toolset-9/root/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib]
+        collapse library dir [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib] ==> [/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib]
+        collapse library dir [/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/../../..] ==> [/opt/rh/gcc-toolset-9/root/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtbegin.o;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/opt/linux/rocky/8.x/x86_64/pkgs/protobuf/v23.4/lib64;/opt/rh/gcc-toolset-9/root/usr/lib/gcc/x86_64-redhat-linux/9;/opt/rh/gcc-toolset-9/root/usr/lib64;/lib64;/usr/lib64;/opt/linux/rocky/8.x/x86_64/pkgs/R/4.2.2/lib64/R/lib;/opt/linux/rocky/8.x/x86_64/pkgs/openmpi/4.1.2_slurm-23.02.2_mpi1-compat/lib;/opt/rh/gcc-toolset-9/root/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "CMakeLists.txt:8 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Y8Rzit"
+      binary: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Y8Rzit"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Y8Rzit'
+        
+        Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_96e50/fast
+        /opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_96e50.dir/build.make CMakeFiles/cmTC_96e50.dir/build
+        gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Y8Rzit'
+        Building C object CMakeFiles/cmTC_96e50.dir/src.c.o
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_96e50.dir/src.c.o -c /rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Y8Rzit/src.c
+        Linking C executable cmTC_96e50
+        /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_96e50.dir/link.txt --verbose=1
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc CMakeFiles/cmTC_96e50.dir/src.c.o -o cmTC_96e50 
+        /opt/rh/gcc-toolset-9/root/usr/bin/ld: CMakeFiles/cmTC_96e50.dir/src.c.o: in function `main':
+        src.c:(.text+0x2d): undefined reference to `pthread_create'
+        /opt/rh/gcc-toolset-9/root/usr/bin/ld: src.c:(.text+0x39): undefined reference to `pthread_detach'
+        /opt/rh/gcc-toolset-9/root/usr/bin/ld: src.c:(.text+0x45): undefined reference to `pthread_cancel'
+        /opt/rh/gcc-toolset-9/root/usr/bin/ld: src.c:(.text+0x56): undefined reference to `pthread_join'
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_96e50.dir/build.make:99: cmTC_96e50] Error 1
+        gmake[1]: Leaving directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-Y8Rzit'
+        gmake: *** [Makefile:127: cmTC_96e50/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "CMakeLists.txt:8 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-fbZQXu"
+      binary: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-fbZQXu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-fbZQXu'
+        
+        Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_6073d/fast
+        /opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_6073d.dir/build.make CMakeFiles/cmTC_6073d.dir/build
+        gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-fbZQXu'
+        Building C object CMakeFiles/cmTC_6073d.dir/CheckFunctionExists.c.o
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_6073d.dir/CheckFunctionExists.c.o -c /rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-fbZQXu/CheckFunctionExists.c
+        Linking C executable cmTC_6073d
+        /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6073d.dir/link.txt --verbose=1
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_6073d.dir/CheckFunctionExists.c.o -o cmTC_6073d  -lpthreads 
+        /opt/rh/gcc-toolset-9/root/usr/bin/ld: cannot find -lpthreads
+        collect2: error: ld returned 1 exit status
+        gmake[1]: *** [CMakeFiles/cmTC_6073d.dir/build.make:99: cmTC_6073d] Error 1
+        gmake[1]: Leaving directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-fbZQXu'
+        gmake: *** [Makefile:127: cmTC_6073d/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "/bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/share/cmake-3.27/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "CMakeLists.txt:8 (find_package)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gXG5Zs"
+      binary: "/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gXG5Zs"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gXG5Zs'
+        
+        Run Build Command(s): /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E env VERBOSE=1 /opt/rh/gcc-toolset-9/root/usr/bin/gmake -f Makefile cmTC_436c2/fast
+        /opt/rh/gcc-toolset-9/root/usr/bin/gmake  -f CMakeFiles/cmTC_436c2.dir/build.make CMakeFiles/cmTC_436c2.dir/build
+        gmake[1]: Entering directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gXG5Zs'
+        Building C object CMakeFiles/cmTC_436c2.dir/CheckFunctionExists.c.o
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_436c2.dir/CheckFunctionExists.c.o -c /rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gXG5Zs/CheckFunctionExists.c
+        Linking C executable cmTC_436c2
+        /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/cmake/3.27.1/bin/cmake -E cmake_link_script CMakeFiles/cmTC_436c2.dir/link.txt --verbose=1
+        /opt/rh/gcc-toolset-9/root/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_436c2.dir/CheckFunctionExists.c.o -o cmTC_436c2  -lpthread 
+        gmake[1]: Leaving directory '/rhome/dparm003/protopractice/zzprof/build/CMakeFiles/CMakeScratch/TryCompile-gXG5Zs'
+        
+      exitCode: 0
+...
